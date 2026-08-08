@@ -18,7 +18,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script async src="https://tally.so/widgets/embed.js"></script>
     
     <style>
         .hero-bg {
@@ -43,16 +42,16 @@
     <header class="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md text-white border-b border-slate-800">
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
             <a href="#hero" class="flex items-center gap-3">
-                <img src="Logo-staysmart.png" alt="StaySmart Logo" class="h-9 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('alt-logo-text').style.display='block';">
+                <img src="Logo-StaySmart.png" alt="StaySmart Logo" class="h-9 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('alt-logo-text').style.display='block';">
                 <span id="alt-logo-text" class="hidden text-2xl font-black tracking-tight text-white">StaySmart<span class="text-blue-500">Realty™</span></span>
             </a>
             
             <nav class="hidden md:flex items-center gap-6 font-medium text-sm text-slate-300">
-                <a href="#catalogo" class="hover:text-blue-400 transition">Inmuebles</a>
-                <a href="#viajes" class="hover:text-blue-400 transition">Hoteles, Vuelos y Tours</a>
-                <a href="#esquemas-propietarios" class="hover:text-blue-400 transition">Delega tu Propiedad</a>
-                <a href="#journal" class="hover:text-blue-400 transition">Journal & Noticias</a>
-                <a href="#quienes-somos" class="hover:text-blue-400 transition">¿Qué somos?</a>
+                <a href="#viajes" class="hover:text-blue-400 transition" data-translate="navViajes">Hoteles, Vuelos y Tours</a>
+                <a href="#stanzu-link" class="hover:text-blue-400 transition" data-translate="navStanzu">Inmuebles (Stanzu)</a>
+                <a href="#esquemas-propietarios" class="hover:text-blue-400 transition" data-translate="navDelega">Delega tu Propiedad</a>
+                <a href="#journal" class="hover:text-blue-400 transition" data-translate="navJournal">Journal & Noticias</a>
+                <a href="#quienes-somos" class="hover:text-blue-400 transition" data-translate="navQuienes">¿Qué somos?</a>
             </nav>
 
             <div class="flex items-center gap-3 text-xs font-semibold">
@@ -64,19 +63,28 @@
         </div>
     </header>
 
-    <section id="hero" class="hero-bg pt-16 pb-20 px-4 relative">
-        <div class="max-w-5xl mx-auto text-center space-y-6">
-            <div class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/40 px-4 py-1.5 rounded-full text-blue-200 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
-                <i class="fa-solid fa-compass text-blue-400"></i>
-                <span id="heroBadge">Ecosistema Inteligente de Turismo e Inmuebles</span>
-            </div>
+    <section id="hero" class="hero-bg pt-12 pb-16 px-4 relative text-center">
+        <div class="max-w-4xl mx-auto space-y-4">
             <h1 class="text-4xl md:text-6xl font-black tracking-tight leading-tight text-white drop-shadow-md">
-                <span class="text-white">StaySmart</span><span class="text-blue-500">Realty™</span> <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-300 to-emerald-400" id="heroSubtitle">Conexión Directa entre Propietarios, Compradores y Viajeros</span>
+                <span class="text-white">StaySmart</span><span class="text-blue-500">Realty™</span>
             </h1>
-            <p class="text-slate-100 max-w-2xl mx-auto text-sm md:text-base leading-relaxed drop-shadow font-medium" id="heroDescription">
-                Renta tu estadía vacacional, cotiza tu viaje global o invierte en propiedades exclusivas en la Costa Caribe y toda Colombia.
+            <p class="text-slate-100 max-w-2xl mx-auto text-sm md:text-base leading-relaxed drop-shadow font-medium" id="heroSubtitle">
+                Conexión Directa entre Propietarios, Compradores y Viajeros Globales en Colombia.
             </p>
+        </div>
+    </section>
+
+    <section id="stanzu-link" class="max-w-7xl mx-auto px-4 py-8">
+        <div class="bg-gradient-to-r from-blue-900/60 via-slate-900 to-emerald-950 border border-blue-500/40 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            <div class="space-y-1 text-center md:text-left">
+                <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider"><i class="fa-solid fa-building"></i> Exclusiva Inmobiliaria</span>
+                <h3 class="text-xl md:text-2xl font-black text-white">¿Quieres publicar tu inmueble o buscar propiedades?</h3>
+                <p class="text-xs text-slate-300">Conéctate de manera directa con nuestra plataforma oficial en Stanzu.</p>
+            </div>
+            <a href="https://staysmart-realty.github.io/Stanzu/" target="_blank" rel="noopener" class="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold px-6 py-3.5 rounded-xl text-xs md:text-sm transition flex items-center gap-2 shadow-lg whitespace-nowrap">
+                <span>Conéctate con Stanzu</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
         </div>
     </section>
 
@@ -97,12 +105,12 @@
                     <div class="w-full md:w-auto">
                         <label class="block text-[10px] uppercase tracking-wider text-slate-300 font-bold mb-1">Tipo de Búsqueda:</label>
                         <select id="travelSelector" onchange="conmutarServicioViaje(this.value)" class="w-full bg-slate-900 border-2 border-blue-500/60 text-white text-xs font-bold rounded-xl px-4 py-2.5 focus:outline-none focus:border-blue-400 cursor-pointer shadow-inner">
-                            <option value="hoteles">🏨 Hoteles y Alojamientos Globales (Klook / KKday)</option>
-                            <option value="vuelos">✈️ Vuelos Nacionales e Internacionales (Aviasales)</option>
-                            <option value="gocity">🎟️ Pases Go City (USA, Disney, Japón & Global)</option>
-                            <option value="kkday">🌏 Experiencias y Tours Mundiales (KKday Global)</option>
-                            <option value="klook">🎡 Atracciones, Parques y Tours (Klook)</option>
-                            <option value="autos">🚗 Alquiler de Vehículos (GetRentACar)</option>
+                            <option value="hoteles">🏨 Hoteles y Alojamientos Globales</option>
+                            <option value="vuelos">✈️ Vuelos Nacionales e Internacionales</option>
+                            <option value="gocity">🎟️ Pases Go City (USA, Europa, Japón)</option>
+                            <option value="kkday">🌏 Experiencias y Tours Mundiales</option>
+                            <option value="klook">🎡 Atracciones y Parques Temáticos</option>
+                            <option value="autos">🚗 Alquiler de Vehículos</option>
                         </select>
                     </div>
                 </div>
@@ -110,19 +118,19 @@
                 <div id="panel-hoteles" class="grid md:grid-cols-3 gap-3">
                     <div>
                         <label class="block text-[11px] text-slate-300 mb-1">Destino o Ciudad</label>
-                        <input type="text" id="hotelDestino" placeholder="Ej: Santa Marta, Cancún, Tokio, Miami" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                        <input type="text" id="hotelDestino" placeholder="Ej: Santa Marta, Cancún, Tokio" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
                     </div>
                     <div>
                         <label class="block text-[11px] text-slate-300 mb-1">Proveedor Autorizado</label>
                         <select id="hotelProvider" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white focus:outline-none focus:border-blue-500">
-                            <option value="kkday">KKday (Hoteles & Paquetes Globales)</option>
-                            <option value="klook">Klook (Alojamientos & Resorts Globales)</option>
+                            <option value="kkday">KKday (Hoteles & Paquetes)</option>
+                            <option value="klook">Klook (Alojamientos Globales)</option>
                         </select>
                     </div>
                     <div class="flex items-end">
                         <button onclick="buscarHotelRedireccion()" class="w-full bg-gradient-to-r from-blue-600 via-teal-500 to-emerald-500 hover:opacity-90 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
                             <i class="fa-solid fa-hotel"></i>
-                            <span>Buscar Hoteles Globales</span>
+                            <span>Buscar Hoteles</span>
                         </button>
                     </div>
                 </div>
@@ -130,38 +138,36 @@
                 <div id="panel-vuelos" class="hidden grid md:grid-cols-3 gap-3">
                     <div>
                         <label class="block text-[11px] text-slate-300 mb-1">Origen</label>
-                        <input type="text" placeholder="Ej: Bogotá (BOG), Medellín (MDE)" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+                        <input type="text" placeholder="Ej: Bogotá (BOG)" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500">
                     </div>
                     <div>
                         <label class="block text-[11px] text-slate-300 mb-1">Destino</label>
-                        <input type="text" placeholder="Ej: Santa Marta (SMR), Tokio, Nueva York" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500">
+                        <input type="text" placeholder="Ej: Santa Marta (SMR)" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500">
                     </div>
                     <div class="flex items-end">
-                        <a href="https://www.aviasales.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
+                        <a href="https://www.aviasales.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
                             <i class="fa-solid fa-plane-departure"></i>
-                            <span>Buscar Vuelos en Aviasales</span>
+                            <span>Buscar en Aviasales</span>
                         </a>
                     </div>
                 </div>
 
                 <div id="panel-gocity" class="hidden grid md:grid-cols-3 gap-3">
                     <div>
-                        <label class="block text-[11px] text-slate-300 mb-1">Ciudad o Destino Principal</label>
-                        <input type="text" placeholder="Ej: Orlando, Nueva York, Miami, Tokio" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+                        <label class="block text-[11px] text-slate-300 mb-1">Ciudad Destino</label>
+                        <input type="text" placeholder="Ej: Orlando, Nueva York" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500">
                     </div>
                     <div>
-                        <label class="block text-[11px] text-slate-300 mb-1">Atracciones & Parques</label>
-                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white focus:outline-none focus:border-amber-500">
-                            <option>Todos los Pases Multi-Atracción</option>
-                            <option>Parques de Diversiones & Disney</option>
-                            <option>Tours Urbanos y Museos en USA</option>
-                            <option>Pases Turísticos en Japón y Asia</option>
+                        <label class="block text-[11px] text-slate-300 mb-1">Tipo de Pase</label>
+                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white">
+                            <option>Multi-Atracción</option>
+                            <option>Parques & Disney</option>
                         </select>
                     </div>
                     <div class="flex items-end">
-                        <a href="https://gocity.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-90 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
+                        <a href="https://gocity.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
                             <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <span>Explorar Pases Go City</span>
+                            <span>Explorar Go City</span>
                         </a>
                     </div>
                 </div>
@@ -169,39 +175,36 @@
                 <div id="panel-kkday" class="hidden grid md:grid-cols-3 gap-3">
                     <div>
                         <label class="block text-[11px] text-slate-300 mb-1">Destino Mundial</label>
-                        <input type="text" placeholder="Ej: Japón, Europa, USA, Colombia" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                        <input type="text" placeholder="Ej: Japón, Europa" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500">
                     </div>
                     <div>
                         <label class="block text-[11px] text-slate-300 mb-1">Categoría</label>
-                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white focus:outline-none focus:border-blue-500">
-                            <option>Hoteles & Experiencias Globales</option>
-                            <option>Excursiones & Trenes Internacionales</option>
-                            <option>SIM Cards / WiFi Viajero</option>
+                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white">
+                            <option>Experiencias Globales</option>
+                            <option>SIM Cards / WiFi</option>
                         </select>
                     </div>
                     <div class="flex items-end">
-                        <a href="https://www.kkday.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-blue-600 to-teal-500 hover:from-blue-500 hover:to-teal-400 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
+                        <a href="https://www.kkday.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
                             <i class="fa-solid fa-globe"></i>
-                            <span>Explorar en KKday Global</span>
+                            <span>Explorar KKday</span>
                         </a>
                     </div>
                 </div>
 
                 <div id="panel-klook" class="hidden grid md:grid-cols-3 gap-3">
                     <div>
-                        <label class="block text-[11px] text-slate-300 mb-1">Atracción o Ciudad</label>
-                        <input type="text" placeholder="Ej: Universal Studios, Entradas, Tours" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-orange-500">
+                        <label class="block text-[11px] text-slate-300 mb-1">Atracción</label>
+                        <input type="text" placeholder="Ej: Tours, Entradas" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500">
                     </div>
                     <div>
-                        <label class="block text-[11px] text-slate-300 mb-1">Tipo de Actividad</label>
-                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white focus:outline-none focus:border-orange-500">
-                            <option>Hoteles & Resorts</option>
-                            <option>Entradas Temáticas & Disney</option>
-                            <option>Tours de Día Completo</option>
+                        <label class="block text-[11px] text-slate-300 mb-1">Actividad</label>
+                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white">
+                            <option>Resorts & Parques</option>
                         </select>
                     </div>
                     <div class="flex items-end">
-                        <a href="https://www.klook.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-orange-600 to-amber-500 hover:from-orange-500 hover:to-amber-400 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
+                        <a href="https://www.klook.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-orange-600 to-amber-500 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
                             <i class="fa-solid fa-ticket"></i>
                             <span>Buscar en Klook</span>
                         </a>
@@ -210,21 +213,19 @@
 
                 <div id="panel-autos" class="hidden grid md:grid-cols-3 gap-3">
                     <div>
-                        <label class="block text-[11px] text-slate-300 mb-1">Lugar de Recogida</label>
-                        <input type="text" placeholder="Ej: Aeropuerto de Miami, Cancún, Bogotá" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-purple-500">
+                        <label class="block text-[11px] text-slate-300 mb-1">Recogida</label>
+                        <input type="text" placeholder="Ej: Aeropuerto Miami" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white placeholder-slate-500">
                     </div>
                     <div>
-                        <label class="block text-[11px] text-slate-300 mb-1">Tipo de Vehículo</label>
-                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white focus:outline-none focus:border-purple-500">
-                            <option>Todos los modelos</option>
-                            <option>Económico / Sedán</option>
-                            <option>Camioneta / SUV 4x4</option>
+                        <label class="block text-[11px] text-slate-300 mb-1">Vehículo</label>
+                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs md:text-sm text-white">
+                            <option>SUV / Sedán</option>
                         </select>
                     </div>
                     <div class="flex items-end">
-                        <a href="https://getrentacar.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
+                        <a href="https://getrentacar.com" target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white font-bold rounded-xl p-3 text-xs md:text-sm transition flex items-center justify-center gap-2 shadow-lg">
                             <i class="fa-solid fa-car"></i>
-                            <span>Alquilar con GetRentACar</span>
+                            <span>Alquilar Vehículo</span>
                         </a>
                     </div>
                 </div>
@@ -232,52 +233,15 @@
         </div>
     </section>
 
-    <main id="catalogo" class="max-w-7xl mx-auto py-12 px-4 w-full flex-grow bg-slate-950">
-        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-4 border-b border-slate-800 pb-6">
-            <div>
-                <h2 class="text-2xl md:text-3xl font-black text-white tracking-tight">Portafolio de Inmuebles</h2>
-                <p class="text-xs md:text-sm text-slate-400 mt-1">Conexión directa entre propietarios, compradores y viajeros en Colombia.</p>
-            </div>
-            
-            <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto">
-                <div class="flex gap-1.5 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
-                    <button onclick="cambiarFiltro('todos')" id="filter-todos" class="px-3.5 py-2 bg-blue-600 text-white text-xs font-bold rounded-lg transition shadow-md">Todos</button>
-                    <button onclick="cambiarFiltro('venta')" id="filter-venta" class="px-3.5 py-2 text-slate-400 hover:text-white text-xs font-bold rounded-lg transition">En Venta</button>
-                    <button onclick="cambiarFiltro('turismo')" id="filter-turismo" class="px-3.5 py-2 text-slate-400 hover:text-white text-xs font-bold rounded-lg transition">Renta Turística</button>
-                </div>
-
-                <button data-tally-open="2EgqYV" data-tally-layout="modal" data-tally-width="700" class="bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center gap-2 shadow-lg cursor-pointer">
-                    <i class="fa-solid fa-plus-circle text-sm"></i>
-                    <span>Publicar Mi Inmueble ($4 USD/mes)</span>
-                </button>
-            </div>
-        </div>
-
-        <div id="gridInmuebles" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-    </main>
-
     <section id="esquemas-propietarios" class="bg-slate-900 border-t border-slate-800 py-16 px-4">
         <div class="max-w-7xl mx-auto space-y-10">
             <div class="text-center space-y-3">
                 <span class="bg-blue-500/10 text-blue-400 border border-blue-500/30 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block">Propietarios & Inversionistas</span>
-                <h2 class="text-3xl md:text-4xl font-black text-white">Delega tu propiedad: Esquemas de Comercialización y Gestión Inmobiliaria StaySmart</h2>
+                <h2 class="text-3xl md:text-4xl font-black text-white">Delega tu propiedad: Esquemas de Comercialización y Gestión Inmobiliaria</h2>
                 <p class="text-amber-400 text-xs md:text-sm font-semibold max-w-2xl mx-auto flex items-center justify-center gap-2">
                     <i class="fa-solid fa-location-dot"></i>
                     <span>Operación técnica y presencial disponible únicamente en la ciudad de Santa Marta</span>
                 </p>
-                <p class="text-slate-400 text-xs md:text-sm max-w-3xl mx-auto">Selecciona la modalidad estratégica que mejor optimice tu rendimiento financiero o seguridad patrimonial.</p>
-            </div>
-
-            <div class="bg-gradient-to-r from-blue-600 via-teal-500 to-emerald-500 rounded-2xl p-6 md:p-7 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
-                <div class="flex items-center gap-4 text-white">
-                    <div class="w-11 h-11 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
-                        <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
-                    </div>
-                    <p class="font-bold text-sm md:text-base leading-snug" id="iaPropiedadText">¿Quieres saber cómo la IA puede analizar y ofrecerte excelentes posibilidades para maximizar el retorno de tu inmueble?</p>
-                </div>
-                <a href="https://tally.so/r/MeLWGp" target="_blank" rel="noopener" class="flex-shrink-0 bg-slate-950 hover:bg-slate-800 text-white font-bold px-5 py-3 rounded-xl text-xs md:text-sm transition flex items-center gap-2 shadow-lg whitespace-nowrap" id="iaPropiedadBtn">
-                    <i class="fa-solid fa-file-pen"></i> <span>Cuéntanos Sobre tu Propiedad</span>
-                </a>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -287,20 +251,16 @@
                         <span class="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md mb-3 inline-block">Rentabilidad Garantizada</span>
                         <h3 class="text-lg font-black text-white">StaySmart Guarantee</h3>
                         <p class="text-xs font-semibold text-blue-400 mb-3">(Master Lease / Arrendamiento Comercial)</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">Arrendamos tu inmueble a largo plazo pagándote un canon fijo mensual garantizado. Nos encargamos por completo de la operación y explotación turística y ejecutiva del inmueble.</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Arrendamos tu inmueble a largo plazo pagándote un canon fijo mensual garantizado. Operación completa por parte de StaySmart.</p>
                         
                         <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1.5 text-[11px]">
                             <div class="flex justify-between"><span class="text-slate-500">Riesgo Propietario:</span><span class="text-emerald-400 font-bold">Nulo (Canon Fijo)</span></div>
-                            <div class="flex justify-between"><span class="text-slate-500">Mantenimiento:</span><span class="text-slate-300 font-medium">Cubierto por StaySmart</span></div>
                         </div>
                     </div>
                     
-                    <div class="mt-6 space-y-2">
+                    <div class="mt-6">
                         <button onclick="abrirModal('modalEsquemaMasterLease')" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 rounded-xl text-xs transition">
                             Saber Más
-                        </button>
-                        <button onclick="abrirModal('modalBorradorMasterLease')" class="w-full bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white py-1.5 text-[11px] font-semibold transition border border-slate-800 rounded-lg">
-                            Ver Borrador Contrato
                         </button>
                     </div>
                 </div>
@@ -310,20 +270,16 @@
                         <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md mb-3 inline-block">Máximo Rendimiento</span>
                         <h3 class="text-lg font-black text-white">StaySmart Alliance</h3>
                         <p class="text-xs font-semibold text-emerald-400 mb-3">(Revenue Share / Joint Venture)</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">Alianza estratégica donde el propietario aporta el inmueble y StaySmart la operación y tecnología, compartiendo utilidades netas.</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Alianza estratégica donde compartimos utilidades netas según el rendimiento operacional del inmueble.</p>
                         
                         <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1.5 text-[11px]">
                             <div class="flex justify-between"><span class="text-slate-500">Distribución:</span><span class="text-emerald-400 font-bold">60% Dueño / 40% StaySmart</span></div>
-                            <div class="flex justify-between"><span class="text-slate-500">Intereses:</span><span class="text-slate-300 font-medium">100% Alineados</span></div>
                         </div>
                     </div>
                     
-                    <div class="mt-6 space-y-2">
+                    <div class="mt-6">
                         <button onclick="abrirModal('modalEsquemaRevenueShare')" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2 rounded-xl text-xs transition">
                             Saber Más
-                        </button>
-                        <button onclick="abrirModal('modalBorradorRevenueShare')" class="w-full bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white py-1.5 text-[11px] font-semibold transition border border-slate-800 rounded-lg">
-                            Ver Borrador Contrato
                         </button>
                     </div>
                 </div>
@@ -333,20 +289,16 @@
                         <span class="bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md mb-3 inline-block">Comercialización VIP</span>
                         <h3 class="text-lg font-black text-white">Venta Inmobiliaria VIP</h3>
                         <p class="text-xs font-semibold text-amber-400 mb-3">(Corretaje + Custodia & Aseo)</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">Corretaje especializado con servicio de mantenimiento, ventilación y aseo pre-visita para inmuebles desocupados en venta.</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">Corretaje especializado con servicio de mantenimiento y aseo pre-visita para inmuebles en venta.</p>
                         
                         <div class="mt-4 pt-3 border-t border-slate-800/80 space-y-1.5 text-[11px]">
                             <div class="flex justify-between"><span class="text-slate-500">Comisión Cierre:</span><span class="text-amber-400 font-bold">2% - 3%</span></div>
-                            <div class="flex justify-between"><span class="text-slate-500">Custodia/Aseo:</span><span class="text-slate-300 font-medium">Fee o Descuento Cierre</span></div>
                         </div>
                     </div>
                     
-                    <div class="mt-6 space-y-2">
+                    <div class="mt-6">
                         <button onclick="abrirModal('modalEsquemaVentaVIP')" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 rounded-xl text-xs transition">
                             Saber Más
-                        </button>
-                        <button onclick="abrirModal('modalBorradorVentaVIP')" class="w-full bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white py-1.5 text-[11px] font-semibold transition border border-slate-800 rounded-lg">
-                            Ver Borrador Contrato
                         </button>
                     </div>
                 </div>
@@ -361,17 +313,13 @@
                 <div>
                     <span class="bg-blue-500/10 text-blue-400 border border-blue-500/30 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block">Actualidad & Guías Colombia</span>
                     <h2 class="text-3xl font-black text-white mt-2">Journal de Inversión, Turismo & Noticias</h2>
-                    <p class="text-xs md:text-sm text-slate-400 mt-1">Análisis de mercado, noticias semanales y guías turísticas de Colombia.</p>
-                </div>
-                <div class="flex items-center gap-2 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800 text-xs text-slate-400 font-mono">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span>Auto-Feed Activo (Actualización Semanal)</span>
+                    <p class="text-xs md:text-sm text-slate-400 mt-1">Análisis de mercado, noticias y guías turísticas actualizadas.</p>
                 </div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
                 
-                <div onclick="abrirModal('modalArticuloRentaTuristica')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/60 transition cursor-pointer flex flex-col justify-between card-glow group">
+                <a href="https://www.mincomercio.gov.co" target="_blank" rel="noopener" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/60 transition flex flex-col justify-between card-glow group">
                     <div>
                         <div class="relative h-48 w-full overflow-hidden bg-slate-800">
                             <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800" alt="Renta Turística" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -379,16 +327,16 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-base font-bold text-white group-hover:text-blue-400 transition">Guía Legal de Renta Turística en Colombia (Ley 2068 & RNT)</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Requisitos para operar alquileres vacacionales legally: RNT, tarjetas TRA, asambleas de copropietarios y normas de la SIC.</p>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Requisitos para operar alquileres vacacionales legally: RNT, tarjetas TRA, asambleas y normas oficiales.</p>
                         </div>
                     </div>
                     <div class="px-6 pb-6 text-xs text-blue-400 font-semibold flex items-center justify-between">
-                        <span>Leer artículo completo</span>
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Ver Fuente Oficial</span>
+                        <i class="fa-solid fa-external-link"></i>
                     </div>
-                </div>
+                </a>
 
-                <div onclick="abrirModal('modalArticuloComprarCosta')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition cursor-pointer flex flex-col justify-between card-glow group">
+                <a href="https://www.supernotariado.gov.co" target="_blank" rel="noopener" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition flex flex-col justify-between card-glow group">
                     <div>
                         <div class="relative h-48 w-full overflow-hidden bg-slate-800">
                             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800" alt="Comprar Propiedad" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -396,16 +344,16 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition">Paso a Paso para Comprar Propiedades en la Costa Caribe</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Análisis de títulos a 20 años, paz y salvos prediales, estudio de escrituras notariales y promesa de compraventa sin riesgos.</p>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Análisis de títulos, paz y salvos prediales, escrituras notariales y promesa de compraventa sin riesgos.</p>
                         </div>
                     </div>
                     <div class="px-6 pb-6 text-xs text-emerald-400 font-semibold flex items-center justify-between">
-                        <span>Leer artículo completo</span>
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Ver Artículo Externo</span>
+                        <i class="fa-solid fa-external-link"></i>
                     </div>
-                </div>
+                </a>
 
-                <div onclick="abrirModal('modalArticuloComparativaCaribe')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/60 transition cursor-pointer flex flex-col justify-between card-glow group">
+                <a href="https://www.lonja.org.co" target="_blank" rel="noopener" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/60 transition flex flex-col justify-between card-glow group">
                     <div>
                         <div class="relative h-48 w-full overflow-hidden bg-slate-800">
                             <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800" alt="Santa Marta Cartagena" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -413,83 +361,16 @@
                         </div>
                         <div class="p-6">
                             <h3 class="text-base font-bold text-white group-hover:text-teal-400 transition">Santa Marta vs. Cartagena vs. Barranquilla</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Comparativa de plusvalía, costo por metro cuadrado, retorno de inversión (ROI) y potencial de renta corta y corporativa.</p>
+                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Comparativa de plusvalía, costo por metro cuadrado, retorno de inversión (ROI) y potencial de renta.</p>
                         </div>
                     </div>
                     <div class="px-6 pb-6 text-xs text-teal-400 font-semibold flex items-center justify-between">
-                        <span>Leer artículo completo</span>
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <span>Ver Estudio Completo</span>
+                        <i class="fa-solid fa-external-link"></i>
                     </div>
-                </div>
-
-                <div onclick="abrirModal('modalArticuloTayrona')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/60 transition cursor-pointer flex flex-col justify-between card-glow group">
-                    <div>
-                        <div class="relative h-48 w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=800" alt="Parque Tayrona" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">Guía de Viaje</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition">Parque Nacional Tayrona: Guía Completa 2026</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Senderos, playas, cierres de conservación y cómo combinar tu visita con una estadía en Santa Marta.</p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 text-xs text-emerald-400 font-semibold flex items-center justify-between">
-                        <span>Leer artículo completo</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-
-                <div onclick="abrirModal('modalArticuloROI')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-blue-500/60 transition cursor-pointer flex flex-col justify-between card-glow group">
-                    <div>
-                        <div class="relative h-48 w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800" alt="Rentabilidad Inmobiliaria" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-blue-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">Inversión</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-base font-bold text-white group-hover:text-blue-400 transition">Cómo Maximizar el ROI de tu Propiedad en Renta Vacacional</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Master Lease vs. Revenue Share vs. Venta: qué esquema conviene según tu perfil de riesgo.</p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 text-xs text-blue-400 font-semibold flex items-center justify-between">
-                        <span>Leer artículo completo</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-
-                <div onclick="abrirModal('modalArticuloCartagena')" class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-amber-500/60 transition cursor-pointer flex flex-col justify-between card-glow group">
-                    <div>
-                        <div class="relative h-48 w-full overflow-hidden bg-slate-800">
-                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800" alt="Cartagena" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">Cartagena</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition">Cartagena: Guía de Turismo e Inversión Inmobiliaria</h3>
-                            <p class="text-xs text-slate-400 mt-2 line-clamp-3">Ciudad Amurallada, Getsemaní, Bocagrande e Islas del Rosario: dónde alojarte y dónde invertir.</p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 text-xs text-amber-400 font-semibold flex items-center justify-between">
-                        <span>Leer artículo completo</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
+                </a>
 
             </div>
-
-
-
-            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 backdrop-blur-md">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
-                        <i class="fa-solid fa-newspaper text-blue-400"></i>
-                        <span>Novedades & Tendencias del Sector en Colombia</span>
-                    </h3>
-                    <span class="text-[11px] text-slate-400">Actualizado dinámicamente</span>
-                </div>
-
-                <div id="feedNoticiasContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    </div>
-            </div>
-
         </div>
     </section>
 
@@ -498,619 +379,51 @@
             <span class="text-blue-400 text-xs font-bold uppercase tracking-widest">Plataforma Global e Inmobiliaria</span>
             <h2 class="text-3xl font-black text-white">¿Qué es StaySmartRealty™?</h2>
             <p class="text-slate-300 text-sm leading-relaxed max-w-3xl mx-auto">
-                <strong>StaySmartRealty™</strong> es un ecosistema digital e inmobiliario de vanguardia. Funcionamos como un hub de conectividad turística internacional que integra los principales motores mundiales de hoteles, vuelos y excursiones. Al mismo tiempo, actuamos como una firma especializada en la comercialización y operación de activos inmobiliarios en Colombia, ofreciendo a los propietarios en <strong>Santa Marta</strong> esquemas flexibles de arrendamiento garantizado, co-anfitrionaje, alianzas de margen compartido y corretaje VIP.
+                <strong>StaySmartRealty™</strong> es un ecosistema digital e inmobiliario de vanguardia. Funciona como un hub de conectividad turística internacional que integra los principales motores mundiales de hoteles, vuelos y excursiones, y como firma especializada en la operación y comercialización de activos inmobiliarios en Santa Marta y Colombia.
             </p>
         </div>
     </section>
 
     <footer class="bg-slate-950 border-t border-slate-900 py-10 px-4 text-xs text-slate-500 relative">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
-            <div>
-                <p class="text-white font-black text-lg mb-1">StaySmart<span class="text-blue-500">Realty™</span></p>
-                <p class="text-slate-400">&copy; <span id="footerYear">2026</span> StaySmartRealty™. Todos los derechos reservados.</p>
-                <p class="mt-2 text-slate-400"><strong class="text-slate-300">Aliado Operativo en Santa Marta:</strong> Luxury Vacation Rentals</p>
-            </div>
-
-            <div class="flex justify-center gap-6 font-semibold">
-                <button onclick="abrirModal('modalTerminosServicio')" class="hover:text-slate-200 transition cursor-pointer">Términos del Servicio</button>
-                <button onclick="abrirModal('modalPoliticaPrivacidad')" class="hover:text-slate-200 transition cursor-pointer">Política de Privacidad</button>
-            </div>
-
-            <div class="text-center md:text-right text-slate-400">
-                <span class="inline-flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 font-mono text-[11px]">
-                    <i class="fa-solid fa-server text-emerald-400"></i>
-                    <span id="serverTimeLabel">Hora Colombia:</span> <span id="serverTimeDisplay" class="text-slate-200">--:--:--</span>
-                </span>
-            </div>
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-white font-black text-lg mb-1">StaySmart<span class="text-blue-500">Realty™</span></p>
+            <p class="text-slate-400">&copy; <span id="footerYear">2026</span> StaySmartRealty. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <div id="modalEsquemaMasterLease" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full p-6 md:p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalEsquemaMasterLease')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-xl font-black text-white mb-4 border-b border-slate-800 pb-3">StaySmart Guarantee (Master Lease / Arrendamiento Comercial)</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed">
-                <p><strong>¿En qué consiste?</strong> StaySmart se convierte en tu arrendatario corporativo a largo plazo, mediante un contrato comercial de 3 a 5 años sobre tu inmueble. Con ese contrato en mano, StaySmart asume la gestión integral del inmueble para su explotación en el mercado de alojamiento temporal y ejecutivo, tomando todas las decisiones operativas del día a día.</p>
-                
-                <h4 class="font-bold text-white text-sm">Propuesta para el Propietario</h4>
-                <p>Recibes un canon de arrendamiento fijo mensual garantizado, cobrado puntualmente los primeros días del mes, sin importar el nivel de ocupación ni la temporada del mercado. Tu ingreso deja de depender de si el inmueble estuvo lleno o vacío ese mes.</p>
-
-                <h4 class="font-bold text-white text-sm">Ventajas para el Propietario</h4>
-                <ul class="list-disc pl-5 space-y-1">
-                    <li>Flujo de caja 100% predecible y garantizado, mes a mes.</li>
-                    <li>Cero riesgo de vacancia: el canon se paga exista o no exista huésped.</li>
-                    <li>Cero desgaste en atención a huéspedes, mensajería, quejas o cobranzas.</li>
-                    <li>Mantenimiento menor garantizado por StaySmart para conservar el activo en perfecto estado.</li>
-                </ul>
-
-                <h4 class="font-bold text-white text-sm">Riesgo y Margen</h4>
-                <p><strong>Riesgo financiero para el propietario:</strong> Nulo. Cobras el monto acordado todos los meses, independientemente de la rentabilidad real del mercado ese periodo. <strong>Margen potencial:</strong> Estable y fijo — a cambio de esa seguridad total, renuncias a los picos de rentabilidad de temporada alta, que en ese caso capitaliza StaySmart como parte de su margen operativo.</p>
-
-                <h4 class="font-bold text-white text-sm">Cómo Trabajamos Este Esquema</h4>
-                <p>1. Visitamos el inmueble y hacemos un avalúo comercial de canon justo, basado en la ubicación, el estado del inmueble y el comportamiento histórico de la zona (Pozos Colorados, El Rodadero, Bello Horizonte, etc.). 2. Firmamos el contrato de arrendamiento comercial a 3-5 años con el canon fijo pactado. 3. StaySmart y Luxury Vacation Rentals asumen la operación completa: fotografía, publicación en canales, precios dinámicos, comunicación con huéspedes, check-in/out, limpieza y mantenimiento menor. 4. El propietario recibe su canon puntualmente, sin ninguna gestión operativa de su parte.</p>
-
-                <h4 class="font-bold text-white text-sm">Contexto de Costos en Colombia</h4>
-                <p>El valor del canon fijo se calcula normalmente como un porcentaje del ingreso promedio esperado de la propiedad en el mercado de alquiler temporal de la zona, descontando el margen operativo y el riesgo que asume StaySmart al garantizar el pago incluso en temporada baja. No existe una tarifa única de mercado para este modelo en Colombia; se define caso a caso según ubicación, tamaño, amoblado y estado del inmueble.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalEsquemaRevenueShare" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full p-6 md:p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalEsquemaRevenueShare')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-xl font-black text-white mb-4 border-b border-slate-800 pb-3">StaySmart Alliance (Revenue Share / Joint Venture)</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed">
-                <p><strong>¿En qué consiste?</strong> Una alianza estratégica donde el propietario y StaySmart se asocian para maximizar el rendimiento económico del inmueble, compartiendo los beneficios netos. El propietario aporta el activo inmobiliario (idealmente ya amoblado con estándar de calidad), mientras que StaySmart aporta la infraestructura operativa, el ecosistema digital, el posicionamiento de marca, la estrategia de precios y la automatización de procesos.</p>
-
-                <h4 class="font-bold text-white text-sm">Cómo se Calcula la Utilidad</h4>
-                <p>Del ingreso bruto generado por el inmueble, se deduce primero el costo operativo real (limpieza, servicios públicos, mantenimiento, comisiones de plataformas). La utilidad neta resultante se distribuye proporcionalmente entre las partes — por ejemplo, 60% para el propietario y 40% para StaySmart, aunque la proporción exacta se acuerda según lo que aporte cada parte al negocio.</p>
-
-                <h4 class="font-bold text-white text-sm">Ventajas para el Propietario</h4>
-                <ul class="list-disc pl-5 space-y-1">
-                    <li>Alineación total de intereses: StaySmart solo gana más si el propietario también gana más.</li>
-                    <li>Acceso a la tecnología de punta de la plataforma (precios dinámicos, IA, canales múltiples) sin tener que operarla tú mismo.</li>
-                    <li>Transparencia absoluta sobre costos e ingresos, con rendición de cuentas periódica.</li>
-                </ul>
-
-                <h4 class="font-bold text-white text-sm">Riesgo y Margen</h4>
-                <p><strong>Riesgo financiero para el propietario:</strong> Medio — se asume el riesgo de las fluctuaciones del mercado en temporadas bajas, ya que no hay un ingreso garantizado como en el Master Lease. <strong>Margen potencial:</strong> Muy alto — este esquema permite capturar el máximo rendimiento financiero del inmueble en las temporadas de mayor demanda, sin el techo que impone un canon fijo.</p>
-
-                <h4 class="font-bold text-white text-sm">Cómo Trabajamos Este Esquema</h4>
-                <p>1. Evaluamos el inmueble y acordamos el porcentaje de distribución de utilidades según el aporte de cada parte. 2. StaySmart se encarga de la comercialización, tecnología, precios dinámicos y operación diaria. 3. Cada mes se descuentan los costos operativos reales y se reparte la utilidad neta según lo pactado, con reporte detallado para el propietario. 4. Este esquema es ideal para propietarios que buscan el mayor retorno posible y están dispuestos a compartir el riesgo de estacionalidad a cambio de un mayor techo de ganancia.</p>
-
-                <h4 class="font-bold text-white text-sm">Contexto en Colombia</h4>
-                <p>Los esquemas de cuentas en participación (revenue share) para renta vacacional no tienen un porcentaje fijo regulado en Colombia; la práctica de mercado suele moverse en rangos entre 60/40 y 70/30 a favor del propietario, dependiendo de quién asume más costos operativos y quién aporta el amoblado y equipamiento.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalEsquemaVentaVIP" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full p-6 md:p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalEsquemaVentaVIP')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-xl font-black text-white mb-4 border-b border-slate-800 pb-3">Venta Inmobiliaria VIP con Custodia y Mantenimiento</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed">
-                <p><strong>¿En qué consiste?</strong> Comercialización e intermediación inmobiliaria tradicional para la compraventa de tu inmueble, enfocada en encontrar un comprador serio en el menor tiempo posible y al mejor precio de mercado. Incluye corretaje inmobiliario especializado, además de un servicio de custodia operativa: ventilación regular, limpieza preventiva y puesta a punto antes de cada visita, para que el inmueble desocupado luzca impecable ante cada comprador potencial.</p>
-
-                <h4 class="font-bold text-white text-sm">Propuesta para el Propietario</h4>
-                <p>Gestión integral de la venta de tu inmueble enfocada en inversionistas y compradores calificados, utilizando canales digitales tradicionales, bases de datos privadas y la red de clientes compradores de StaySmart y Luxury Vacation Rentals.</p>
-
-                <h4 class="font-bold text-white text-sm">Ventajas para el Propietario</h4>
-                <ul class="list-disc pl-5 space-y-1">
-                    <li>Salida de capital y liquidez inmediata tras el cierre de la transacción.</li>
-                    <li>Valoración justa del inmueble según el mercado inmobiliario actual de la zona.</li>
-                    <li>El inmueble se mantiene en condiciones de exhibición óptimas durante todo el proceso de venta, gracias al servicio de custodia y aseo.</li>
-                </ul>
-
-                <h4 class="font-bold text-white text-sm">Comisión y Custodia</h4>
-                <p>La comisión de cierre se ubica entre el 2% y el 3% del valor final de venta, exigible únicamente cuando la transacción se cierra efectivamente. El servicio de custodia y aseo se cobra como un fee mensual fijo de mantenimiento, o como un monto acumulado deducible del valor final de la comisión al momento del cierre — lo que resulte más conveniente para el propietario.</p>
-
-                <h4 class="font-bold text-white text-sm">Cómo Trabajamos Este Esquema</h4>
-                <p>1. Visitamos el inmueble, tomamos fotografía profesional y definimos el precio de venta recomendado según el mercado. 2. Firmamos el mandato de corretaje que nos autoriza a promocionar y gestionar la venta en tu representación. 3. Coordinamos las visitas de compradores interesados, manteniendo el inmueble en condiciones óptimas mediante el servicio de custodia y aseo. 4. Al encontrar un comprador, acompañamos la negociación y la firma de la promesa de compraventa, hasta la escritura pública final ante notaría.</p>
-
-                <h4 class="font-bold text-white text-sm">Contexto de Costos en Colombia</h4>
-                <p>En Colombia no existe una ley que fije el porcentaje de comisión inmobiliaria; el mercado tiene sus propias prácticas. La costumbre mercantil reconocida (incluso por Cámaras de Comercio regionales) ubica la comisión estándar en alrededor del 3% para inmuebles urbanos, con propiedades de segmento de lujo negociando frecuentemente comisiones más bajas, cercanas al 2%, cuando el valor del inmueble es alto. StaySmart trabaja dentro de ese rango de mercado (2%-3%), generalmente a cargo del vendedor, y sujeto a IVA si el prestador del servicio está en régimen común.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalBorradorMasterLease" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full p-6 md:p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalBorradorMasterLease')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-lg font-black text-white mb-3 border-b border-slate-800 pb-3">Borrador: Contrato de Arrendamiento Comercial a Largo Plazo</h3>
-            <div class="text-xs text-slate-300 space-y-3 font-mono bg-slate-950 p-4 rounded-xl border border-slate-800 max-h-60 overflow-y-auto">
-                <p>CLÁUSULA 1: ARRENDATARIO MAESTRO. StaySmart asume la tenencia comercial del inmueble...</p>
-                <p>CLÁUSULA 2: DESTINACIÓN DEL INMUEBLE. El Arrendador faculta expresamente la explotación turística/ejecutiva del inmueble por parte de StaySmart...</p>
-                <p>CLÁUSULA 3: CANON FIJO. Se acuerda el pago de $X.XXX.XXX COP mensuales el día 1 de cada mes...</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-800 text-center space-y-3">
-                <p class="text-xs text-amber-300 font-semibold">Si deseas más información sobre los términos del contrato o adaptar una propuesta a tu inmueble, contáctanos:</p>
-                <div class="flex flex-wrap justify-center gap-3 text-xs">
-                    <a href="mailto:ceo@staysmartrealty.com" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-solid fa-envelope"></i> ceo@staysmartrealty.com</a>
-                    <a href="https://wa.me/573024339598?text=Hola,%20quisiera%20mas%20informacion%20del%20contrato%20Master%20Lease" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> WhatsApp Luxury Vacation Rentals</a>
-                    <button data-tally-open="2EgqYV" data-tally-layout="modal" data-tally-width="700" class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-solid fa-file-pen"></i> Registrar mi Inmueble en Tally</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalBorradorRevenueShare" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full p-6 md:p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalBorradorRevenueShare')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-lg font-black text-white mb-3 border-b border-slate-800 pb-3">Borrador: Contrato de Cuentas en Participación (Revenue Share)</h3>
-            <div class="text-xs text-slate-300 space-y-3 font-mono bg-slate-950 p-4 rounded-xl border border-slate-800 max-h-60 overflow-y-auto">
-                <p>CLÁUSULA 1: ASOCIACIÓN. El Socio Inversionista aporta el activo físico y el Socio Gestor la operación...</p>
-                <p>CLÁUSULA 2: LIQUIDACIÓN. Distribución mensual de utilidad neta 60% Propietario / 40% StaySmart...</p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-slate-800 text-center space-y-3">
-                <p class="text-xs text-amber-300 font-semibold">Si deseas más información sobre los términos del contrato o adaptar una propuesta a tu inmueble, contáctanos:</p>
-                <div class="flex flex-wrap justify-center gap-3 text-xs">
-                    <a href="mailto:ceo@staysmartrealty.com" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-solid fa-envelope"></i> ceo@staysmartrealty.com</a>
-                    <a href="https://wa.me/573024339598?text=Hola,%20quisiera%20mas%20informacion%20del%20contrato%20Revenue%20Share" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> WhatsApp Luxury Vacation Rentals</a>
-                    <button data-tally-open="2EgqYV" data-tally-layout="modal" data-tally-width="700" class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-solid fa-file-pen"></i> Registrar mi Inmueble en Tally</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalBorradorVentaVIP" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-3xl w-full p-6 md:p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalBorradorVentaVIP')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-lg font-black text-white mb-3 border-b border-slate-800 pb-3">Contratos Aplicables: Mandato de Corretaje y Promesa de Compraventa</h3>
-
-            <div class="mb-5">
-                <h4 class="text-sm font-bold text-amber-400 mb-2 flex items-center gap-2"><i class="fa-solid fa-file-contract"></i> 1. Contrato de Mandato de Corretaje Inmobiliario</h4>
-                <div class="text-xs text-slate-300 space-y-2 bg-slate-950 p-4 rounded-xl border border-slate-800 leading-relaxed">
-                    <p>Este documento autoriza a StaySmartRealty™ y a su aliado operativo en Santa Marta, Luxury Vacation Rentals, a promocionar, mostrar y gestionar la venta de tu inmueble ante interesados, actuando en tu representación durante todo el proceso comercial.</p>
-                    <p><strong>Incluye:</strong> publicación en canales digitales, fotografía profesional, coordinación de visitas presenciales, custodia y aseo preventivo del inmueble desocupado, negociación de oferta con los compradores interesados, y acompañamiento legal hasta la firma de la escritura pública ante notaría.</p>
-                    <p><strong>Comisión:</strong> del 2% al 3% sobre el valor final de venta, exigible únicamente al cierre efectivo de la transacción — no se cobra nada si la venta no se concreta.</p>
-                    <p><strong>Duración:</strong> se pacta un plazo inicial (normalmente 6 meses, renovable), pudiendo acordarse en exclusiva o de forma no exclusiva según lo que convenga al propietario.</p>
-                </div>
-            </div>
-
-            <div>
-                <h4 class="text-sm font-bold text-amber-400 mb-2 flex items-center gap-2"><i class="fa-solid fa-file-signature"></i> 2. Modelo de Promesa de Compraventa</h4>
-                <div class="text-xs text-slate-300 space-y-2 bg-slate-950 p-4 rounded-xl border border-slate-800 leading-relaxed">
-                    <p>Una vez identificado el comprador, la Promesa de Compraventa es el contrato preliminar bilateral —reconocido en el Código Civil colombiano— que firman vendedor y comprador para asegurar el negocio mientras se completan los trámites necesarios para la escritura pública final (estudio de títulos, aprobación de crédito hipotecario del comprador, paz y salvos).</p>
-                    <p><strong>Incluye:</strong> identificación plena de las partes y del inmueble, precio pactado y forma de pago, arras (anticipo que respalda el compromiso de ambas partes), condiciones suspensivas (por ejemplo, aprobación del crédito), y el plazo máximo para otorgar la escritura pública ante notario.</p>
-                    <p><strong>Protección para ambas partes:</strong> establece qué ocurre si alguna de las partes incumple (pérdida o devolución doblada de las arras, según lo pactado), evitando negociaciones informales sin respaldo legal.</p>
-                </div>
-            </div>
-
-            <div class="mt-6 pt-4 border-t border-slate-800 text-center space-y-3">
-                <p class="text-xs text-amber-300 font-semibold">Si deseas más información sobre los términos del contrato o adaptar una propuesta a tu inmueble, contáctanos:</p>
-                <div class="flex flex-wrap justify-center gap-3 text-xs">
-                    <a href="mailto:ceo@staysmartrealty.com" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-solid fa-envelope"></i> ceo@staysmartrealty.com</a>
-                    <a href="https://wa.me/573024339598?text=Hola,%20quisiera%20mas%20informacion%20del%20contrato%20de%20Venta%20VIP" target="_blank" rel="noopener" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> WhatsApp Luxury Vacation Rentals</a>
-                    <button data-tally-open="2EgqYV" data-tally-layout="modal" data-tally-width="700" class="bg-teal-600 hover:bg-teal-500 text-white font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5"><i class="fa-solid fa-file-pen"></i> Registrar mi Inmueble en Tally</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalArticuloRentaTuristica" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 md:p-8 max-h-[88vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalArticuloRentaTuristica')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200" alt="Renta Turística" class="w-full h-56 object-cover rounded-xl mb-4">
-            <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-3">Guía Legal de Renta Turística en Colombia (Ley 2068 & RNT)</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed font-normal">
-                <p>El negocio de las rentas vacacionales y las estancias cortas en Colombia vive un momento de auge, especialmente en la Costa Caribe, pero ese crecimiento viene acompañado de un marco regulatorio cada vez más estricto. Operar sin cumplirlo no es un detalle menor: puede derivar en sanciones de la Superintendencia de Industria y Comercio (SIC), del Ministerio de Comercio, Industria y Turismo, e incluso en el retiro forzoso del inmueble de las plataformas digitales donde se anuncia. Esta guía reúne, en un solo lugar, los requisitos que StaySmartRealty™ y Luxury Vacation Rentals verifican antes de aceptar un inmueble en cualquiera de nuestros esquemas de administración.</p>
-
-                <h4 class="font-bold text-white text-base">1. Registro Nacional de Turismo (RNT)</h4>
-                <p>Es obligatorio para cualquier inmueble ofertado en plataformas digitales como Airbnb, Booking o directamente por redes sociales, según lo establece la Ley 2068 de 2020. El trámite se realiza ante la Cámara de Comercio de la jurisdicción donde está ubicado el inmueble, es gratuito, y debe renovarse anualmente antes del 31 de marzo de cada año. No contar con el RNT vigente expone al propietario a multas y al cierre del establecimiento turístico.</p>
-
-                <h4 class="font-bold text-white text-base">2. Reglamento de Propiedad Horizontal (Ley 675 de 2001)</h4>
-                <p>No basta con tener el RNT: la actividad turística debe estar expresamente permitida en el reglamento de propiedad horizontal del edificio o conjunto residencial. Muchas copropiedades en Santa Marta han comenzado a regular explícitamente (o incluso a restringir) el arrendamiento de corto plazo mediante decisiones de asamblea, así que este punto debe revisarse caso por caso antes de comprometerse con un esquema de renta turística.</p>
-
-                <h4 class="font-bold text-white text-base">3. Plataforma TRA (Tarjeta de Registro de Alojamiento)</h4>
-                <p>Todo huésped debe quedar registrado antes del check-in a través de la plataforma TRA del Ministerio de Comercio, Industria y Turismo. Este registro migratorio y estadístico es obligatorio tanto para huéspedes nacionales como extranjeros, y su omisión es una de las infracciones más comunes —y más sancionadas— entre anfitriones informales.</p>
-
-                <h4 class="font-bold text-white text-base">4. Sayco y Acinpro</h4>
-                <p>Los inmuebles que reproducen música o brindan entretenimiento a sus huéspedes (algo habitual en la renta vacacional con parlantes, TV con streaming musical, o eventos) deben además pagar los derechos de autor musicales de Sayco y Acinpro, un rubro independiente del RNT y frecuentemente pasado por alto por anfitriones nuevos.</p>
-
-                <h4 class="font-bold text-white text-base">5. Impuesto de Alojamiento e IVA</h4>
-                <p>Dependiendo del municipio, la renta turística puede estar sujeta a un impuesto local de alojamiento u hospedaje, cobrado por noche o como porcentaje de la tarifa. Adicionalmente, si el prestador del servicio está inscrito en el régimen común, debe facturar con IVA sobre el valor del hospedaje.</p>
-
-                <h4 class="font-bold text-white text-base">Checklist Obligatorio para Entrar en Administración con StaySmart</h4>
-                <p>Para que un inmueble sea aceptado dentro de nuestros esquemas de Master Lease o Revenue Share, debe contar con <strong>todos</strong> estos requisitos: RNT vigente, cumplimiento del reglamento de propiedad horizontal, disposición para operar bajo la plataforma TRA, pago al día de Sayco y Acinpro, y una póliza de seguro activa que cubra la estadía de huéspedes. Los inmuebles a los que les falte alguno de estos requisitos no podrán ser aceptados hasta resolverlo — y StaySmart, a través de Luxury Vacation Rentals, ofrece asesoría directa para completar cada uno de estos trámites, incluyendo la elaboración y radicación de tu RNT.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalArticuloComprarCosta" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 md:p-8 max-h-[88vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalArticuloComprarCosta')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200" alt="Comprar Propiedad" class="w-full h-56 object-cover rounded-xl mb-4">
-            <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-3">Paso a Paso para Comprar Propiedades en la Costa Caribe</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed font-normal">
-                <p>Comprar finca raíz en la Costa Caribe colombiana —ya sea como inversión, como segunda vivienda o como negocio de renta vacacional— requiere un proceso riguroso de debida diligencia legal. Saltarse pasos por afán puede terminar costando mucho más que el tiempo que se ahorró. Esta guía resume el proceso que StaySmartRealty™ acompaña junto a su aliado operativo en Santa Marta, Luxury Vacation Rentals, en cada compraventa que gestionamos.</p>
-
-                <h4 class="font-bold text-white text-base">1. Estudio de Títulos a 20 Años</h4>
-                <p>El primer paso, sin excepción, es solicitar el Certificado de Libertad y Tradición del inmueble ante la Oficina de Registro de Instrumentos Públicos, y revisar su historial de al menos los últimos 20 años. Esto permite descartar embargos vigentes, hipotecas no canceladas, procesos judiciales asociados al predio, y las llamadas "falsas tradiciones" (situaciones donde quien vende no es realmente el propietario pleno con todos los derechos, sino solo un poseedor).</p>
-
-                <h4 class="font-bold text-white text-base">2. Paz y Salvos Fiscales y de Administración</h4>
-                <p>Antes de firmar cualquier compromiso, se debe verificar que el Impuesto Predial esté al día, que no existan deudas de valorización pendientes, y que las cuotas ordinarias y extraordinarias de administración del edificio o conjunto estén completamente saldadas. Una deuda de administración puede convertirse en un problema del nuevo propietario si no se documenta correctamente antes del cierre.</p>
-
-                <h4 class="font-bold text-white text-base">3. Promesa de Compraventa</h4>
-                <p>Una vez verificados los puntos anteriores y acordado el precio, se firma la Promesa de Compraventa: un contrato preliminar reconocido en el Código Civil colombiano que compromete a ambas partes mientras se completan los trámites finales (aprobación de crédito hipotecario del comprador, expedición de paz y salvos, redacción de la minuta). Este documento típicamente incluye arras (un anticipo que respalda el compromiso) y establece el plazo máximo para otorgar la escritura pública.</p>
-
-                <h4 class="font-bold text-white text-base">4. Escritura Pública y Registro</h4>
-                <p>El cierre formal de la compraventa ocurre con la firma de la escritura pública ante notario, y solo se perfecciona legalmente cuando esa escritura se inscribe en la Oficina de Registro de Instrumentos Públicos. Hasta que no se registra, la transferencia de dominio no es oponible ante terceros.</p>
-
-                <h4 class="font-bold text-white text-base">5. Consideraciones para Compradores Extranjeros</h4>
-                <p>Los extranjeros pueden comprar propiedad en Colombia sin restricciones generales (salvo zonas fronterizas específicas), pero conviene definir con anticipación cómo se realizará el giro de divisas (registrándolo ante el Banco de la República como inversión extranjera para facilitar una eventual reventa o repatriación de utilidades), y contar con acompañamiento legal bilingüe durante todo el proceso.</p>
-
-                <h4 class="font-bold text-white text-base">Cómo Acompaña StaySmart este Proceso</h4>
-                <p>Bajo nuestro esquema de Venta Inmobiliaria VIP, StaySmartRealty™ coordina el estudio de títulos, verifica los paz y salvos, gestiona la custodia y aseo del inmueble mientras está en proceso de venta, acompaña la negociación de la promesa de compraventa, y guía al comprador y al vendedor hasta la firma de la escritura pública — con comunicación en español e inglés durante todo el proceso.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalArticuloComparativaCaribe" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 md:p-8 max-h-[88vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalArticuloComparativaCaribe')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200" alt="Santa Marta Cartagena" class="w-full h-56 object-cover rounded-xl mb-4">
-            <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-3">Santa Marta vs. Cartagena vs. Barranquilla: ¿Dónde Invertir?</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed font-normal">
-                <p>Las tres ciudades principales de la Costa Caribe colombiana comparten litoral, pero atraen perfiles de comprador e inquilino completamente distintos. Elegir bien no es solo cuestión de presupuesto: depende de qué tipo de retorno buscas y cuánto riesgo estás dispuesto a asumir.</p>
-
-                <h4 class="font-bold text-white text-base">1. Santa Marta: Alta Ocupación y Menor Precio de Entrada</h4>
-                <p>Es la ciudad con el precio por metro cuadrado más accesible de las tres para exposición comparable frente al mar, con fuerte atractivo para turismo de naturaleza gracias a la cercanía del Parque Tayrona y la Sierra Nevada. Zonas como Pozos Colorados, Bello Horizonte y El Rodadero concentran la mayor demanda de renta vacacional de la ciudad, y es también la única ciudad donde StaySmartRealty™ ofrece operación técnica y presencial directa a través de Luxury Vacation Rentals.</p>
-
-                <h4 class="font-bold text-white text-base">2. Cartagena: La Marca Turística Más Fuerte de Colombia</h4>
-                <p>Cartagena tiene el reconocimiento internacional más alto de las tres ciudades y la demanda más constante durante todo el año, lo que generalmente se traduce en tarifas por noche más elevadas — pero también en el costo por metro cuadrado más alto de la región, especialmente dentro de la Ciudad Amurallada. Es una plaza más competitiva para entrar como inversionista nuevo, aunque con techo de rentabilidad más alto para quien ya tiene un activo bien ubicado.</p>
-
-                <h4 class="font-bold text-white text-base">3. Barranquilla: Renta Residencial y Corporativa, No Vacacional</h4>
-                <p>A diferencia de sus vecinas, Barranquilla no es principalmente una ciudad de turismo de playa, sino un centro de negocios, industria y cultura (sede del Carnaval de Colombia). Su mercado de arrendamiento se orienta más a renta residencial y corporativa de mediano y largo plazo que a la renta vacacional de corta estancia, lo que la hace atractiva para un perfil de inversionista distinto: quien busca estabilidad de arriendo tradicional en vez de picos estacionales.</p>
-
-                <h4 class="font-bold text-white text-base">Cómo Elegir Según tu Objetivo</h4>
-                <p>Si buscas el mayor techo de rentabilidad en renta vacacional y reconocimiento de marca: Cartagena. Si buscas un punto de entrada más accesible con fuerte potencial de turismo de naturaleza y acompañamiento operativo directo de StaySmart: Santa Marta. Si te interesa la renta residencial o corporativa de largo plazo por encima de la vacacional: Barranquilla. Actualmente, StaySmartRealty™ administra directamente ventas y propiedades de renta vacacional en Santa Marta; para las otras dos ciudades ofrecemos acompañamiento de corretaje bajo consulta.</p>
-
-                <h4 class="font-bold text-white text-base">Perfil de Comprador Según Ciudad</h4>
-                <p>En Santa Marta predomina el inversionista que busca flujo de caja mensual vía renta vacacional, junto con familias colombianas de otras ciudades buscando segunda vivienda de playa. En Cartagena conviven el inversionista extranjero atraído por la marca internacional de la ciudad y el comprador de alto patrimonio que busca preservar valor en un activo con demanda constante. En Barranquilla el perfil es distinto: empresas, profesionales reubicados y familias que buscan vivienda o arriendo estable, más que un producto turístico.</p>
-
-                <h4 class="font-bold text-white text-base">Costos Ocultos a Considerar en las Tres Ciudades</h4>
-                <p>Independientemente de la ciudad, conviene presupuestar más allá del precio de compra: cuotas de administración (que en edificios con amenities de playa pueden ser significativas), impuesto predial anual, costos de amoblado a estándar turístico si el destino es la renta vacacional, y el cumplimiento de los requisitos legales de operación turística (RNT, TRA, Sayco y Acinpro) si planeas rentar por plataformas digitales. Ignorar estos costos al calcular la rentabilidad esperada es uno de los errores más comunes de los inversionistas primerizos en la Costa.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalArticuloTayrona" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 md:p-8 max-h-[88vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalArticuloTayrona')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=1200" alt="Parque Tayrona" class="w-full h-56 object-cover rounded-xl mb-4">
-            <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-3">Parque Nacional Tayrona: Guía Completa 2026</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed font-normal">
-                <p>Tayrona es el parque natural más visitado de Colombia y una de las razones principales por las que los viajeros suman Santa Marta a su itinerario. Aquí la selva se encuentra con la playa Caribe de una forma difícil de igualar en otro punto de la costa. Esta guía reúne lo que cualquier huésped de nuestro portafolio en Santa Marta debería saber antes de visitarlo.</p>
-
-                <h4 class="font-bold text-white text-base">Cómo Llegar</h4>
-                <p>La mayoría de visitantes entra por Cañaveral o El Zaino, a unos 35-45 minutos al este de Santa Marta en carro, colectivo o traslado organizado. Desde la entrada todavía queda caminata —o cabalgata— hasta las playas, así que conviene planear medio día o el día completo, según el nivel de exigencia física que se busque.</p>
-
-                <h4 class="font-bold text-white text-base">Senderos y Playas Principales</h4>
-                <p>La ruta clásica va de Cañaveral a Cabo San Juan, unas 2 horas caminando o a caballo. Arrecifes tiene corrientes fuertes y no se recomienda para nadar bajo ninguna circunstancia; Cabo San Juan y Playa Cristal son las opciones más seguras y populares para meterse al agua, con la icónica cabaña-mirador de Cabo San Juan como uno de los puntos más fotografiados del parque.</p>
-
-                <h4 class="font-bold text-white text-base">Cierres de Conservación</h4>
-                <p>El parque tiene un cierre anual de conservación (generalmente durante parte del año) para permitir la recuperación del ecosistema y de los sitios sagrados de las comunidades indígenas Kogui, Arhuaco, Wiwa y Kankuamo, que consideran la Sierra Nevada un territorio ancestral. Siempre conviene verificar el calendario oficial de Parques Nacionales Naturales antes de planear el viaje, ya que las fechas pueden variar cada año.</p>
-
-                <h4 class="font-bold text-white text-base">Recomendaciones Esenciales</h4>
-                <p>Lleva efectivo, ya que el acceso a datáfono es limitado dentro del parque; llega temprano para evitar el calor del mediodía y las mayores multitudes; usa calzado resistente para el sendero; y reserva hamacas ecológicas o carpas con anticipación en temporada alta, ya que los sitios más populares como Cabo San Juan se agotan con frecuencia.</p>
-
-                <h4 class="font-bold text-white text-base">Si el Parque Está Cerrado</h4>
-                <p>Durante los períodos de cierre, alternativas cercanas como Playa Los Naranjos, Costeño Beach, o una excursión de un día a Palomino mantienen viva la combinación de selva y playa sin entrar al área protegida — todas ellas también accesibles como excursión de un día desde cualquiera de las propiedades que administra StaySmart en Santa Marta.</p>
-
-                <h4 class="font-bold text-white text-base">Dónde Alojarte para Visitar Tayrona</h4>
-                <p>La mayoría de los visitantes prefiere alojarse en Santa Marta o en zonas cercanas como Pozos Colorados o El Rodadero, y hacer el ingreso al parque como excursión de un día, en lugar de pernoctar dentro del área protegida (que además tiene oferta limitada de hamacas y carpas ecológicas). Esta es también la razón por la que buena parte de nuestro portafolio de renta vacacional en Santa Marta recibe huéspedes que visitan Tayrona como parte central de su itinerario en la ciudad.</p>
-
-                <h4 class="font-bold text-white text-base">Fauna y Flora del Parque</h4>
-                <p>Tayrona alberga una biodiversidad notable gracias a la confluencia entre el bosque seco tropical, el bosque húmedo y el ecosistema marino-costero: monos aulladores, iguanas, una amplia variedad de aves, y arrecifes de coral en sus bahías más protegidas. Esta riqueza natural es también la razón detrás de los cierres de conservación — el equilibrio del ecosistema depende de esos períodos de descanso del flujo turístico.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalArticuloROI" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 md:p-8 max-h-[88vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalArticuloROI')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=1200" alt="Rentabilidad Inmobiliaria" class="w-full h-56 object-cover rounded-xl mb-4">
-            <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-3">Cómo Maximizar el ROI de tu Propiedad en Renta Vacacional</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed font-normal">
-                <p>Tener un inmueble en la Costa Caribe no garantiza por sí solo una buena rentabilidad — el esquema de comercialización que elijas es, muchas veces, la variable que más impacta el retorno neto que terminas recibiendo. Esta guía compara los tres esquemas que ofrece StaySmartRealty™ para ayudarte a decidir cuál se ajusta mejor a tu perfil.</p>
-
-                <h4 class="font-bold text-white text-base">Master Lease: Prioriza la Seguridad Sobre el Techo de Ganancia</h4>
-                <p>Si tu prioridad es un ingreso 100% predecible y no quieres exposición a la estacionalidad del mercado, el Master Lease (StaySmart Guarantee) es la opción más conservadora: recibes un canon fijo mensual sin importar la ocupación real, a cambio de renunciar a los picos de rentabilidad de temporada alta. Es ideal para propietarios que valoran la tranquilidad financiera por encima de exprimir cada punto porcentual de rendimiento.</p>
-
-                <h4 class="font-bold text-white text-base">Revenue Share: El Mayor Techo de Rentabilidad</h4>
-                <p>Si estás dispuesto a asumir algo de riesgo de estacionalidad a cambio de capturar el máximo desempeño del inmueble, el esquema de Revenue Share (StaySmart Alliance) suele ofrecer el mayor potencial de ingreso neto en temporada alta, ya que no hay un techo fijo — tu ingreso crece junto con el desempeño real de la propiedad, con total transparencia sobre costos e ingresos.</p>
-
-                <h4 class="font-bold text-white text-base">Venta Inmobiliaria VIP: Retorno de Capital, No de Renta</h4>
-                <p>Si tu objetivo no es generar ingresos recurrentes sino capitalizar la plusvalía acumulada del inmueble y obtener liquidez inmediata, la venta con corretaje VIP es el camino — especialmente atractivo si compraste hace varios años en una zona que ha subido de valor, o si prefieres reinvertir ese capital en otro activo.</p>
-
-                <h4 class="font-bold text-white text-base">Factores que Impactan el ROI Real, Sin Importar el Esquema</h4>
-                <p>La estacionalidad de ocupación en la zona, la proximidad a la playa y al aeropuerto, las cuotas de administración del edificio, el estado del amoblado, y sobre todo el cumplimiento de los requisitos legales (RNT, Sayco y Acinpro, póliza de seguro, reglamento de propiedad horizontal) inciden directamente en la rentabilidad neta — un inmueble no habilitado legalmente no puede operar en renta turística, sin importar qué tan buena sea su ubicación.</p>
-
-                <h4 class="font-bold text-white text-base">Riesgos a Tener en Cuenta</h4>
-                <p>La exposición cambiaria si tus ingresos están en pesos colombianos pero tus gastos de referencia están en otra moneda, la estacionalidad propia de la renta vacacional, y los eventuales cambios normativos sobre arrendamiento de corto plazo son puntos que vale la pena revisar con tu contador y con nuestro equipo antes de comprometerte con cualquiera de los tres esquemas.</p>
-
-                <h4 class="font-bold text-white text-base">Un Ejemplo Simplificado</h4>
-                <p>Supongamos un apartamento de dos habitaciones en Pozos Colorados que genera el equivalente a USD $2.000 mensuales en reservas brutas durante temporada alta. Bajo Master Lease, el propietario recibiría un canon fijo previamente pactado —más bajo que ese pico, pero garantizado también en temporada baja—. Bajo Revenue Share, tras descontar costos operativos reales (limpieza, servicios, mantenimiento), el propietario recibiría su porcentaje pactado (por ejemplo 60%) sobre la utilidad neta de ese mes específico, lo que en temporada alta puede superar ampliamente al canon fijo, pero en temporada baja puede ser considerablemente menor. Ninguno de los dos esquemas es "mejor" en abstracto: dependen de cuánta certeza necesitas en tu flujo de caja mensual.</p>
-
-                <h4 class="font-bold text-white text-base">Cómo te Ayudamos a Decidir</h4>
-                <p>Antes de firmar cualquier esquema, StaySmartRealty™ hace una evaluación del inmueble, su ubicación, su estado de amoblado y el comportamiento histórico de la zona, y te presenta una proyección comparativa entre los tres modelos para que la decisión se tome con información real, no solo con la promesa de un número atractivo.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalArticuloCartagena" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 md:p-8 max-h-[88vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalArticuloCartagena')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200" alt="Cartagena" class="w-full h-56 object-cover rounded-xl mb-4">
-            <h3 class="text-2xl font-black text-white mb-4 border-b border-slate-800 pb-3">Cartagena: Guía de Turismo e Inversión Inmobiliaria</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed font-normal">
-                <p>Cartagena reúne romance colonial, playas caribeñas y una escena gastronómica vibrante en un centro histórico caminable — pero el barrio que elijas, ya sea para hospedarte o para invertir, cambia por completo el ritmo y el perfil de rentabilidad del negocio.</p>
-
-                <h4 class="font-bold text-white text-base">Ciudad Amurallada</h4>
-                <p>Es la imagen de postal de Cartagena: balcones, plazas y murallas centenarias declaradas Patrimonio de la Humanidad por la UNESCO. Los inmuebles aquí, tanto para hospedaje como para inversión, tienden a ser más pequeños y notablemente más costosos por metro cuadrado que en el resto de la ciudad, dado el alto valor patrimonial y turístico de la zona.</p>
-
-                <h4 class="font-bold text-white text-base">Getsemaní</h4>
-                <p>El barrio de moda y con más arte urbano de la ciudad, justo al lado de la Ciudad Amurallada: grafitis, bares en azotea y un público más joven. Ofrece precios de entrada algo más accesibles que dentro de las murallas, mientras sigue siendo caminable a toda la oferta turística e histórica.</p>
-
-                <h4 class="font-bold text-white text-base">Bocagrande</h4>
-                <p>La franja moderna frente al mar, con torres de hoteles y apartamentos. Cambia el encanto colonial por acceso directo a la playa, piscinas y una estadía más de resort — un segmento particularmente atractivo para inversión en renta vacacional orientada a familias.</p>
-
-                <h4 class="font-bold text-white text-base">Islas del Rosario</h4>
-                <p>No es una zona para basar una inversión residencial cotidiana, pero sí un producto turístico de alto valor: arrecifes de coral, agua clara y un genuino descanso del calor de la ciudad, generalmente comercializado como tour de un día o estadía de lujo en cabañas frente al mar.</p>
-
-                <h4 class="font-bold text-white text-base">Cuándo Ir (y Cuándo Invertir con Menos Competencia)</h4>
-                <p>De diciembre a abril hay menos lluvia y más turistas —y precios más altos, tanto de hospedaje como de propiedades en oferta—; el resto del año llueve más, pero hay notablemente menos competencia entre compradores, lo que en ocasiones abre oportunidades de negociación más favorables para el inversionista atento.</p>
-
-                <h4 class="font-bold text-white text-base">Consideraciones Legales Propias de Cartagena</h4>
-                <p>Por su condición de Patrimonio de la Humanidad, muchos inmuebles dentro de la Ciudad Amurallada están sujetos a restricciones adicionales de conservación patrimonial administradas por el Instituto de Patrimonio y Cultura de Cartagena, que pueden limitar remodelaciones estructurales o cambios de fachada. Esto no impide la inversión, pero sí implica un paso adicional de debida diligencia antes de comprar: verificar si el inmueble tiene alguna categoría de protección patrimonial y qué implicaciones tiene para su uso turístico o remodelación.</p>
-
-                <h4 class="font-bold text-white text-base">Renta Vacacional en Cartagena</h4>
-                <p>Al igual que en Santa Marta, cualquier inmueble destinado a renta turística en Cartagena debe cumplir con el Registro Nacional de Turismo (RNT), el registro de huéspedes en la plataforma TRA, y el reglamento de propiedad horizontal del edificio. La demanda constante durante todo el año hace que estos requisitos se fiscalicen de forma particularmente activa en la ciudad, por lo que operar en regla no es opcional.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalTerminosServicio" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 md:p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalTerminosServicio')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-xl font-black text-white mb-4 border-b border-slate-800 pb-3">Términos y Condiciones Generales del Servicio (Internacional & Colombia)</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed font-normal">
-                <p>Los presentes Términos y Condiciones regulan el uso de la plataforma digital <strong>StaySmartRealty™</strong>, operada tecnológicamente a nivel internacional con presencia en Canadá y servicios operativos presenciales prestados en la República de Colombia en alianza comercial con <strong>Luxury Vacation Rentals</strong>.</p>
-                
-                <h4 class="font-bold text-white text-sm">1. Alcance Territorial de los Servicios Inmobiliarios</h4>
-                <p>Se establece expresamente que los servicios de gestión presencial, mantenimientos, custodia, administración turística directa (Master Lease y Revenue Share) y corretaje VIP aplican <strong>ÚNICA Y EXCLUSIVAMENTE para inmuebles ubicados en la jurisdicción urbana y turística de la ciudad de Santa Marta, Colombia</strong>, prestados directamente por nuestro aliado operativo autorizado, Luxury Vacation Rentals. Para inmuebles ubicados en otras ciudades de Colombia, StaySmartRealty™ podrá ofrecer únicamente servicios de corretaje o acompañamiento bajo consulta particular, sin que ello implique gestión presencial, custodia o administración directa.</p>
-
-                <h4 class="font-bold text-white text-sm">2. Naturaleza de los Esquemas de Comercialización</h4>
-                <p>Los esquemas StaySmart Guarantee (Master Lease), StaySmart Alliance (Revenue Share) y Venta Inmobiliaria VIP son modalidades contractuales independientes entre sí, cada una con su propio instrumento legal (contrato de arrendamiento comercial, contrato de cuentas en participación, o mandato de corretaje, según corresponda), que se formaliza por escrito y de forma independiente a estos Términos Generales antes de iniciar cualquier operación sobre un inmueble específico. La descripción de estos esquemas en la plataforma tiene fines informativos y comerciales, y no sustituye ni constituye por sí sola un contrato vinculante hasta su firma formal entre las partes.</p>
-
-                <h4 class="font-bold text-white text-sm">3. Servicios Digitales de Viajes y Terceros Proveedores</h4>
-                <p>StaySmartRealty™ actúa como intermediario de tecnología y publicidad afiliada para productos de viaje globales, incluyendo pero no limitado a Klook, KKday, Aviasales, Go City y GetRentACar. Todas las transacciones de reserva, pagos, cancelaciones, reembolsos y facturación relacionadas con estos servicios de viaje son ejecutadas directamente en las plataformas de dichos terceros proveedores, bajo sus propios términos, condiciones y políticas de cancelación. StaySmartRealty™ no procesa pagos de viajes directamente, no garantiza disponibilidad, tarifas ni la calidad del servicio prestado por estos terceros, y su responsabilidad se limita a la función de intermediación tecnológica y de referencia.</p>
-
-                <h4 class="font-bold text-white text-sm">4. Declaración sobre Publicación Directa en Catálogo</h4>
-                <p>En el plan de publicación de catálogo (autopublicación de inmuebles por parte del propietario), el usuario o propietario es el único e idóneo responsable civil y penalmente por la autenticidad del inmueble anunciado, la veracidad de los títulos de propiedad, la vigencia de las licencias turísticas correspondientes (incluyendo el Registro Nacional de Turismo, RNT, cuando aplique) y la exactitud de los precios anunciados. StaySmartRealty™ actúa exclusivamente como plataforma tecnológica de exhibición y no asume responsabilidad por distorsiones, omisiones o inexactitudes cometidas por anunciantes independientes en el plan de autopublicación.</p>
-
-                <h4 class="font-bold text-white text-sm">5. Cumplimiento Normativo del Anunciante en Renta Turística</h4>
-                <p>Todo propietario que oferte un inmueble para renta de corto plazo, ya sea a través del plan de autopublicación o de cualquiera de los esquemas de administración, declara conocer y se obliga a cumplir con la normativa turística colombiana aplicable, incluyendo la Ley 2068 de 2020 (Registro Nacional de Turismo), la Ley 675 de 2001 (régimen de propiedad horizontal), el registro de huéspedes ante la plataforma TRA del Ministerio de Comercio, Industria y Turismo, y las obligaciones de pago de derechos de autor musicales ante Sayco y Acinpro cuando el inmueble ofrezca entretenimiento musical a sus huéspedes. El incumplimiento de estos requisitos es causal de suspensión inmediata del inmueble en cualquiera de nuestros esquemas de comercialización.</p>
-
-                <h4 class="font-bold text-white text-sm">6. Comisiones y Condiciones Económicas</h4>
-                <p>Las comisiones de corretaje inmobiliario aplicadas por StaySmartRealty™ (habitualmente entre el 2% y el 3% sobre el valor final de venta) se acuerdan libremente con cada propietario, en línea con la costumbre mercantil vigente en Colombia, donde no existe una tarifa legal fija para este tipo de servicios. La comisión se causa únicamente al cierre efectivo de la transacción, salvo pacto expreso en contrario documentado por escrito.</p>
-
-                <h4 class="font-bold text-white text-sm">7. Propiedad Intelectual</h4>
-                <p>El nombre StaySmartRealty™, su logotipo, el diseño de la plataforma y los contenidos originales del Journal (guías, artículos y análisis de mercado) son propiedad de StaySmartRealty™ y no podrán ser reproducidos, distribuidos o utilizados comercialmente sin autorización previa y expresa por escrito.</p>
-
-                <h4 class="font-bold text-white text-sm">8. Limitación de Responsabilidad y Uso de Inteligencia Artificial</h4>
-                <p>StaySmartRealty™ utiliza herramientas de inteligencia artificial para apoyar el análisis de propiedades, la estimación de rentabilidad y la generación de contenido informativo dentro de la plataforma. Estas herramientas ofrecen estimaciones y análisis de apoyo a la decisión, no asesoría financiera, legal o tributaria profesional; el usuario debe validar cualquier decisión de inversión con sus propios asesores. StaySmartRealty™ no será responsable por decisiones tomadas únicamente con base en estimaciones automatizadas sin la debida diligencia adicional del usuario.</p>
-
-                <h4 class="font-bold text-white text-sm">9. Legislación Aplicable y Resolución de Controversias</h4>
-                <p>Para los servicios inmobiliarios prestados en Santa Marta, Colombia, las controversias se regirán por la legislación colombiana, con sujeción a la jurisdicción ordinaria colombiana o, cuando así se pacte expresamente en el contrato específico, a mecanismos alternativos de resolución de conflictos como la conciliación o el arbitraje ante un centro autorizado en Colombia. Para los servicios tecnológicos de intermediación de viajes de alcance internacional, aplican adicionalmente los términos de cada proveedor tercero conforme a su propia jurisdicción.</p>
-
-                <h4 class="font-bold text-white text-sm">10. Modificaciones a estos Términos</h4>
-                <p>StaySmartRealty™ podrá actualizar estos Términos y Condiciones periódicamente para reflejar cambios normativos, operativos o comerciales. Los cambios sustanciales serán comunicados a través de la plataforma; el uso continuado de los servicios después de una actualización constituye la aceptación de los términos modificados.</p>
-            </div>
-        </div>
-    </div>
-
-    <div id="modalPoliticaPrivacidad" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-4xl w-full p-6 md:p-8 max-h-[85vh] overflow-y-auto relative shadow-2xl">
-            <button onclick="cerrarModal('modalPoliticaPrivacidad')" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-xl font-black text-white mb-4 border-b border-slate-800 pb-3">Política de Protección de Datos Personales y Hábeas Data Multinacional</h3>
-            <div class="text-xs md:text-sm text-slate-300 space-y-4 leading-relaxed font-normal">
-                <p>En cumplimiento estricto de la <strong>Ley Estatutaria 1581 de 2012 de Colombia</strong>, Decreto 1377 de 2013, y las normativas internacionales de privacidad aplicables a la gestión tecnológica transfronteriza (incluyendo PIPEDA en Canadá y lineamientos del GDPR), <strong>StaySmartRealty™</strong> adopta la presente política para salvaguardar la privacidad de sus usuarios.</p>
-                
-                <h4 class="font-bold text-white text-sm">1. Responsable del Tratamiento</h4>
-                <p>StaySmartRealty™, con operación tecnológica desde Canadá y operación comercial en Colombia en alianza con Luxury Vacation Rentals, actúa como responsable del tratamiento de los datos personales recopilados a través de esta plataforma, sus formularios asociados (Tally), canales de WhatsApp Business y correo electrónico directo.</p>
-
-                <h4 class="font-bold text-white text-sm">2. Datos que Recopilamos</h4>
-                <p>Recopilamos datos de identificación básica (nombre, correo electrónico, número de teléfono/WhatsApp), datos relacionados con el inmueble cuando el usuario es propietario (ubicación, características, documentos de soporte para RNT), datos de la solicitud de viaje cuando el usuario es un huésped o viajero (destino, fechas, preferencias), y datos de navegación técnica estándar (dirección IP, tipo de dispositivo, idioma del navegador) para el correcto funcionamiento de la plataforma.</p>
-
-                <h4 class="font-bold text-white text-sm">3. Finalidades del Tratamiento</h4>
-                <p>Los datos recopilados a través de formularios Tally, interacciones de WhatsApp y correos directos (ceo@staysmartrealty.com) son procesados para: a) la evaluación comercial y técnica de propiedades postuladas a nuestros esquemas de administración; b) la formalización de contratos de corretaje, arrendamiento comercial o cuentas en participación en Santa Marta; c) el cumplimiento de reportes obligatorios ante las autoridades migratorias y de turismo de Colombia, incluyendo el registro de huéspedes en la Plataforma TRA; d) la comunicación comercial relacionada con solicitudes de viaje o de gestión inmobiliaria iniciadas por el usuario; y e) el análisis interno mediante herramientas de inteligencia artificial para generar estimaciones de rentabilidad y recomendaciones, siempre a partir de datos previamente entregados voluntariamente por el usuario.</p>
-
-                <h4 class="font-bold text-white text-sm">4. Marco Normativo Aplicable</h4>
-                <p>Esta política se adopta en cumplimiento de la Ley Estatutaria 1581 de 2012 de Colombia (Régimen General de Protección de Datos Personales), su Decreto Reglamentario 1377 de 2013, y en consideración de las normativas internacionales de privacidad aplicables a la operación tecnológica transfronteriza de StaySmartRealty™, incluyendo la Ley de Protección de Información Personal y Documentos Electrónicos de Canadá (PIPEDA) y, cuando aplique a usuarios provenientes de la Unión Europea, los lineamientos generales del Reglamento General de Protección de Datos (GDPR).</p>
-
-                <h4 class="font-bold text-white text-sm">5. Compartición de Datos con Aliados Operativos</h4>
-                <p>Para la ejecución de visitas presenciales, inspecciones técnicas, custodia de inmuebles y entrega de llaves en Santa Marta, el usuario autoriza la transmisión segura de sus datos de contacto y del inmueble hacia nuestro aliado operativo local autorizado: Luxury Vacation Rentals. Esta transmisión se limita estrictamente a la información necesaria para la ejecución del servicio contratado.</p>
-
-                <h4 class="font-bold text-white text-sm">6. Compartición de Datos con Proveedores de Viaje</h4>
-                <p>Cuando el usuario utiliza los buscadores de viaje integrados en la plataforma (Klook, KKday, Aviasales, Go City, GetRentACar), la información necesaria para completar esa reserva es entregada directamente por el usuario a la plataforma del tercero correspondiente, bajo la política de privacidad propia de ese proveedor. StaySmartRealty™ no almacena datos de pago de estas transacciones, ya que estas se procesan íntegramente en las plataformas de los terceros proveedores.</p>
-
-                <h4 class="font-bold text-white text-sm">7. Derechos del Titular de los Datos</h4>
-                <p>De conformidad con la Ley 1581 de 2012, todo titular de datos personales tiene derecho a: conocer, actualizar y rectificar sus datos personales; solicitar prueba de la autorización otorgada; ser informado sobre el uso dado a sus datos; presentar quejas ante la Superintendencia de Industria y Comercio (SIC) por infracciones a la ley; revocar la autorización y/o solicitar la supresión del dato cuando no exista un deber legal o contractual que impida su eliminación; y acceder de forma gratuita a sus datos personales objeto de tratamiento. Estas solicitudes pueden dirigirse directamente a ceo@staysmartrealty.com.</p>
-
-                <h4 class="font-bold text-white text-sm">8. Conservación de la Información</h4>
-                <p>Los datos personales se conservarán durante el tiempo necesario para cumplir con la finalidad para la cual fueron recolectados, y posteriormente durante los plazos legales de conservación documental aplicables a la actividad inmobiliaria y turística en Colombia (incluyendo los registros exigidos por la Plataforma TRA), tras lo cual serán eliminados o anonimizados de forma segura.</p>
-
-                <h4 class="font-bold text-white text-sm">9. Seguridad de la Información</h4>
-                <p>StaySmartRealty™ implementa medidas técnicas y administrativas razonables para proteger los datos personales contra pérdida, uso indebido, acceso no autorizado, divulgación o alteración, incluyendo el uso de formularios cifrados (Tally) y canales de comunicación con controles de acceso restringido.</p>
-
-                <h4 class="font-bold text-white text-sm">10. Menores de Edad</h4>
-                <p>Los servicios de StaySmartRealty™ están dirigidos a usuarios mayores de edad. No recopilamos conscientemente datos personales de menores de edad sin el consentimiento verificable de sus padres o representantes legales.</p>
-
-                <h4 class="font-bold text-white text-sm">11. Contacto para Asuntos de Privacidad</h4>
-                <p>Para ejercer cualquiera de los derechos descritos en esta política, o para resolver dudas sobre el tratamiento de tus datos personales, puedes escribir directamente a ceo@staysmartrealty.com o contactar a nuestro equipo por WhatsApp a través de los canales oficiales publicados en esta plataforma.</p>
-            </div>
-        </div>
-    </div>
-
     <script>
-        const demoData = [
-            { id: 1, titulo: "Apt Frente al Mar Pozos Colorados", tipo_oferta: "turismo", ciudad: "Santa Marta", sector: "Pozos Colorados", precio: 380000, habitaciones: 2, banos: 2, capacidad: 6, imagen_url: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800" },
-            { id: 2, titulo: "Penthouse Exclusivo El Poblado", tipo_oferta: "venta", ciudad: "Medellín", sector: "El Poblado", precio: 850000000, habitaciones: 3, banos: 3, capacidad: 0, imagen_url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800" },
-            { id: 3, titulo: "Cabaña Campestre en Guatapé", tipo_oferta: "turismo", ciudad: "Guatapé", sector: "Malecón", precio: 520000, habitaciones: 4, banos: 3, capacidad: 10, imagen_url: "https://images.unsplash.com/photo-1587061949409-02df41d5e562?q=80&w=800" },
-            { id: 4, titulo: "Apartamento Vista Panorámica Rodadero", tipo_oferta: "venta", ciudad: "Santa Marta", sector: "El Rodadero", precio: 420000000, habitaciones: 2, banos: 2, capacidad: 0, imagen_url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800" }
-        ];
-
-        const noticiasDinámicas = [
-            { titulo: "Crecimiento del Turismo en Santa Marta 2026", fecha: "Reciente", fuente: "StaySmart Research", resumen: "Ocupación en Pozos Colorados y El Rodadero supera proyecciones históricas.", categoria: "Mercado" },
-            { titulo: "Nuevas reglamentaciones para RNT en Colombia", fecha: "Esta Semana", fuente: "MinComercio", resumen: "Ajustes en los tiempos de verificación para tarjetas TRA y copropiedades.", categoria: "Legal" },
-            { titulo: "Ruta de Inversión Inmobiliaria en el Caribe", fecha: "Destacado", fuente: "Journal StaySmart", resumen: "Por qué la compra sobre planos en Pozos Colorados lidera la plusvalía regional.", categoria: "Inversión" }
-        ];
-
-        let filtroActual = 'todos';
-        let monedaActual = 'COP';
-
-        function conmutarServicioViaje(opcion) {
+        function conmutarServicioViaje(tipo) {
             const paneles = ['hoteles', 'vuelos', 'gocity', 'kkday', 'klook', 'autos'];
             paneles.forEach(p => {
-                const el = document.getElementById(`panel-${p}`);
-                if (el) {
-                    if (p === opcion) el.classList.remove('hidden');
-                    else el.classList.add('hidden');
-                }
+                const el = document.getElementById('panel-' + p);
+                if(el) el.classList.add('hidden');
             });
+            const activo = document.getElementById('panel-' + tipo);
+            if(activo) activo.classList.remove('hidden');
         }
 
         function buscarHotelRedireccion() {
+            const destino = document.getElementById('hotelDestino').value || 'Colombia';
             const proveedor = document.getElementById('hotelProvider').value;
-            if (proveedor === 'kkday') window.open('https://www.kkday.com', '_blank');
-            else window.open('https://www.klook.com', '_blank');
+            let url = proveedor === 'klook' ? `https://www.klook.com/search?query=${encodeURIComponent(destino)}` : `https://www.kkday.com/es/product/search?keyword=${encodeURIComponent(destino)}`;
+            window.open(url, '_blank');
         }
 
-        function cambiarIdiomaMoneda(val) {
-            monedaActual = (val === 'en') ? 'USD' : 'COP';
-            const badge = document.getElementById('heroBadge');
+        function abrirModal(id) {
+            alert('Detalle o información extendida del servicio seleccionado.');
+        }
+
+        // Selector de idioma funcional
+        function cambiarIdiomaMoneda(lang) {
             const subtitle = document.getElementById('heroSubtitle');
-            
-            if (val === 'en') {
-                if(badge) badge.innerText = "Smart Ecosystem for Tourism & Real Estate";
-                if(subtitle) subtitle.innerText = "Direct Connection between Owners, Buyers & Travelers";
+            if(lang === 'en') {
+                subtitle.innerText = "Direct Connection between Property Owners, Buyers and Global Travelers in Colombia.";
             } else {
-                if(badge) badge.innerText = "Ecosistema Inteligente de Turismo e Inmuebles";
-                if(subtitle) subtitle.innerText = "Conexión Directa entre Propietarios, Compradores y Viajeros";
+                subtitle.innerText = "Conexión Directa entre Propietarios, Compradores y Viajeros Globales en Colombia.";
             }
-            renderizarInmuebles(demoData);
-        }
-
-        function renderizarInmuebles(lista) {
-            const grid = document.getElementById('gridInmuebles');
-            const html = lista.map(item => {
-                const esTurismo = item.tipo_oferta === 'turismo';
-                const btnTexto = esTurismo ? 'Consultar Disponibilidad' : 'Contactar por Venta';
-                const etiqueta = esTurismo ? 'Renta Turística' : 'En Venta';
-                
-                let precioFormateado = Number(item.precio).toLocaleString('es-CO');
-                let sufijoPrecio = esTurismo ? '/ noche' : 'COP';
-
-                if (monedaActual === 'USD') {
-                    const precioUSD = esTurismo ? Math.round(item.precio / 4000) : Math.round(item.precio / 4000);
-                    precioFormateado = `${precioUSD.toLocaleString('en-US')}`;
-                    sufijoPrecio = esTurismo ? '/ night USD' : 'USD';
-                }
-
-                return `
-                    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg hover:border-blue-500/50 transition flex flex-col justify-between card-glow">
-                        <div>
-                            <div class="relative h-48 w-full bg-slate-800 overflow-hidden">
-                                <img src="${item.imagen_url}" alt="${item.titulo}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
-                                <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md text-blue-400 border border-blue-800/50 text-[10px] font-bold uppercase px-2.5 py-1 rounded-md">
-                                    ${etiqueta}
-                                </span>
-                            </div>
-                            <div class="p-5">
-                                <span class="text-[11px] font-bold text-blue-400 uppercase tracking-wider">${item.ciudad} · ${item.sector || ''}</span>
-                                <h3 class="font-bold text-base text-white mt-1 line-clamp-1">${item.titulo}</h3>
-                                
-                                <div class="flex items-center gap-4 text-xs text-slate-400 my-3">
-                                    <span><i class="fa-solid fa-bed text-blue-400"></i> ${item.habitaciones} Hab</span>
-                                    <span><i class="fa-solid fa-bath text-blue-400"></i> ${item.banos} Baños</span>
-                                    ${esTurismo ? `<span><i class="fa-solid fa-user-group text-blue-400"></i> ${item.capacidad} Pers.</span>` : ''}
-                                </div>
-
-                                <div class="text-lg font-black text-white">
-                                    $${precioFormateado} <span class="text-xs font-normal text-slate-400">${sufijoPrecio}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-5 pt-0">
-                            <a href="https://wa.me/573024339598?text=Hola,%20quisiera%20informacion%20del%20inmueble:%20${encodeURIComponent(item.titulo)}" target="_blank" rel="noopener" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-2 shadow-md">
-                                <i class="fa-brands fa-whatsapp text-emerald-300"></i> ${btnTexto}
-                            </a>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-            grid.innerHTML = html;
-        }
-
-        function renderizarFeedNoticias() {
-            const container = document.getElementById('feedNoticiasContainer');
-            if(!container) return;
-            container.innerHTML = noticiasDinámicas.map(n => `
-                <div class="bg-slate-950/90 border border-slate-800/80 rounded-xl p-4 hover:border-slate-700 transition">
-                    <div class="flex justify-between items-center text-[10px] text-blue-400 font-bold mb-1">
-                        <span>${n.categoria}</span>
-                        <span class="text-slate-500">${n.fecha}</span>
-                    </div>
-                    <h4 class="text-xs font-bold text-white mb-1 leading-snug">${n.titulo}</h4>
-                    <p class="text-[11px] text-slate-400 leading-normal">${n.resumen}</p>
-                </div>
-            `).join('');
-        }
-
-        function cambiarFiltro(nuevoFiltro) {
-            filtroActual = nuevoFiltro;
-            ['todos', 'venta', 'turismo'].forEach(f => {
-                const btn = document.getElementById(`filter-${f}`);
-                if (btn) {
-                    btn.className = (f === nuevoFiltro) 
-                        ? "px-3.5 py-2 bg-blue-600 text-white text-xs font-bold rounded-lg transition shadow-md" 
-                        : "px-3.5 py-2 text-slate-400 hover:text-white text-xs font-bold rounded-lg transition";
-                }
-            });
-            let filtrados = demoData;
-            if (nuevoFiltro !== 'todos') filtrados = demoData.filter(i => i.tipo_oferta === nuevoFiltro);
-            renderizarInmuebles(filtrados);
-        }
-
-        function abrirModal(id) { 
-            const m = document.getElementById(id);
-            if(m) m.classList.remove('hidden'); 
-        }
-        
-        function cerrarModal(id) { 
-            const m = document.getElementById(id);
-            if(m) m.classList.add('hidden'); 
-        }
-
-        function actualizarServerTime() {
-            const now = new Date();
-            const lang = document.getElementById('langSelect') ? document.getElementById('langSelect').value : 'es';
-            const opciones = {
-                timeZone: 'America/Bogota',
-                day: '2-digit', month: 'short', year: 'numeric',
-                hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
-            };
-            const locale = (lang === 'en') ? 'en-US' : 'es-CO';
-            const display = document.getElementById('serverTimeDisplay');
-            if (display) display.innerText = new Intl.DateTimeFormat(locale, opciones).format(now);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            renderizarInmuebles(demoData);
-            renderizarFeedNoticias();
-            actualizarServerTime();
-            setInterval(actualizarServerTime, 1000);
             const yearEl = document.getElementById('footerYear');
             if (yearEl) yearEl.textContent = new Date().getFullYear();
         });
